@@ -159,7 +159,7 @@ class _LoginState extends State<Login> {
                     autofocus: false,
                     controller: _emailController,
                     validator: validateEmail,
-                    onChanged: (value) => userName = value,
+                    onChanged: (value) => _emailController.text = value,
                     decoration:
                         buildInputDecoration('Enter Email', Icons.email),
                   ),
@@ -176,7 +176,7 @@ class _LoginState extends State<Login> {
                     obscureText: true,
                     validator: (value) =>
                         value.isEmpty ? "Please enter password" : null,
-                    onChanged: (value) => password = value,
+                    onChanged: (value) => _passwordController.text = value,
                     decoration:
                         buildInputDecoration('Enter Password', Icons.lock),
                   ),

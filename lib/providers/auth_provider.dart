@@ -5,6 +5,7 @@ import 'package:encrypt/encrypt.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_login_regis_provider/domain/api_help.dart';
+import 'package:flutter_login_regis_provider/domain/responsitory/auth_responsitory.dart';
 import 'package:flutter_login_regis_provider/model/request/login_request.dart';
 import 'package:flutter_login_regis_provider/model/response/login_response.dart';
 import 'package:flutter_login_regis_provider/utility/app_url.dart';
@@ -202,7 +203,8 @@ class AuthProvider extends ChangeNotifier {
               DateTime.now().toUtc().millisecondsSinceEpoch.toString());
       LoginRequest request =
           LoginRequest(data: cre, request: requestLoginParameter);
-      final loginResponse = await ApiHelper.postLogin(request);
+      final loginResponse =
+          await AuthenticationRes().loginWithEmailPassword(request);
       return loginResponse;
     } catch (error) {
       print(error.toString());

@@ -26,15 +26,15 @@ class HttpLogInterceptor extends InterceptorsWrapper {
       RequestOptions options, RequestInterceptorHandler handler) async {
     options.headers = {
       "access-token":
-          "eyJraWQiOiJXcDRGMndiQVpMa1d2WWgyNDhnYjNtUHBLRzZTdDRNcG85Tmc3U2diZ2E0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJkOTM2NmY3Yy02ZGJlLTRkZmUtOGZkNy1kMzA5MjM5YzUxNTUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX1FiMVE4VFBzVSIsImNvZ25pdG86dXNlcm5hbWUiOiJkOTM2NmY3Yy02ZGJlLTRkZmUtOGZkNy1kMzA5MjM5YzUxNTUiLCJvcmlnaW5fanRpIjoiMjcwNDI2YjgtYWU3MC00NTZiLWI1YzgtMDk1Yzg5NzY2NWVkIiwiYXVkIjoic2lrY25laTR0MmgzbnRrcWo1ZDQ5bHR2ciIsImV2ZW50X2lkIjoiYjAxODJmMzgtNDM5MC00MTdkLWI2N2EtNjIwNzE5NzVlMzI4IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Njk3NDk3NzIsIm5hbWUiOiJBQkNBQSIsImV4cCI6MTY3MDc2OTU4OSwiaWF0IjoxNjcwNjgzMTg5LCJqdGkiOiI3ZjhlODRmZi03MTgxLTRlYzAtYmUxNS0xMmI0Y2JhMzI2NzQiLCJlbWFpbCI6InJlcGFybzEwOTJAdHVydW1hLmNvbSJ9.xP58T6y4o6GD73lEdRQIwL8LZuPekC36c9xbJ0GAIqzggcteJUYw3b-8Nlkz75z5UnE9MGHr8xL2VCGn1uqk0BLa9ZQtksFhkknGShHe-yVL7G__rRmC_1qQvvM2DBUHfZFu-FKpOMF140BMwSHQ3Delrx4fHMnN1qwdG_6ZD7KzdmVTj2Bn0iv58MKy0L35ZvXGn5UewFHXUdpFJn0n-tPJFyR3lyul7kxOBoHK8Y47Z355Ouh69IYrye6bNuRpo6x151OT4vb6Ip9KbLIs-GdoHXNt0gITJkIq2x73p2awfoeOEQLXNA2RsUSMP1n0R8gVcQPjPMU4FP7Qj7yaog",
+          "eyJraWQiOiJXcDRGMndiQVpMa1d2WWgyNDhnYjNtUHBLRzZTdDRNcG85Tmc3U2diZ2E0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJkOTM2NmY3Yy02ZGJlLTRkZmUtOGZkNy1kMzA5MjM5YzUxNTUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX1FiMVE4VFBzVSIsImNvZ25pdG86dXNlcm5hbWUiOiJkOTM2NmY3Yy02ZGJlLTRkZmUtOGZkNy1kMzA5MjM5YzUxNTUiLCJvcmlnaW5fanRpIjoiMjcwNDI2YjgtYWU3MC00NTZiLWI1YzgtMDk1Yzg5NzY2NWVkIiwiYXVkIjoic2lrY25laTR0MmgzbnRrcWo1ZDQ5bHR2ciIsImV2ZW50X2lkIjoiYjAxODJmMzgtNDM5MC00MTdkLWI2N2EtNjIwNzE5NzVlMzI4IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Njk3NDk3NzIsIm5hbWUiOiJBQkNBQSIsImV4cCI6MTY3MDg1MDkxOSwiaWF0IjoxNjcwNzY0NTE5LCJqdGkiOiJlMjdiY2Y5NC05NDA5LTRmYWMtYWJhMy1jYjFhMmU5ZDY4OGEiLCJlbWFpbCI6InJlcGFybzEwOTJAdHVydW1hLmNvbSJ9.r0s5Ej9H2Luz9-sJPzvYUmPPrcDnSp2zTAuEZXz_Wwr3vO2t7nBlxJd5pobnHOm0jNgpULfIEfwJjAbPS6vpZcGCcihDeaqeV2nOy6MJU6akJO93uGmxQeYr82afZMiTKWq3g42ownOiGxVqIjP-2GD-XvtuCLIlGuX-gu7Fhf0TPX0eLRoAbHEFiaPDf0DkOYSqcjyRQ9Mm9wceNMbrXh2DyoLnJ0FUBXiraFzSblaoHKnKOub_WGHur0ZRBPMK3_xocW56y-H0lGzCBmJLxTx-e-s9-NmmdDQUVk74apRp6xDrHg0XHfQvtjK8VfO91py_oM3w3mihgbuS-99SvQ",
       "x-api-key": "hutech_hackathon@123456",
       "Content-Type": "application/json"
     };
-    if (kDebugMode) {
-      log('onRequest: ${options.headers}');
-      log('onRequest: ${options.method}');
-      log('onRequest: ${options.data}');
-    }
+
+    log('onRequest: ${options.headers}');
+    log('onRequest: ${options.method}');
+    log('onRequest: ${options.data}');
+
     return handler.next(options);
   }
 

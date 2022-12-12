@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_login_regis_provider/domain/responsitory/auth_responsitory.dart';
 import 'package:flutter_login_regis_provider/model/request/login_request.dart';
+import 'package:flutter_login_regis_provider/model/request/register_request.dart';
 import 'package:flutter_login_regis_provider/model/response/login_response.dart';
+import 'package:flutter_login_regis_provider/model/response/register_response.dart';
 import 'package:pointycastle/asymmetric/api.dart';
 import '../utility/utils.dart';
 
@@ -35,13 +37,16 @@ class AuthProvider extends ChangeNotifier {
   set registeredInStatus(Status value) {
     _registeredInStatus = value;
   }
+
   notify() {
     notifyListeners();
   }
+
   static onError(error) {
     print('the error is ${error.detail}');
     return {'status': false, 'message': 'Unsuccessful Request', 'data': error};
   }
+
   Future<String> handleRenderEncrypter(String username, String password) async {
     final dir = await rootBundle.loadString('assets/pem_file/public.pem');
     final rsaPublicKey = await RSAKeyParser().parse(dir) as RSAPublicKey;
@@ -59,18 +64,49 @@ class AuthProvider extends ChangeNotifier {
       String username, String password) async {
     try {
       String crendential = await handleRenderEncrypter(username, password);
-      Crendential cre =
+      Crendential creLogin =
           Crendential(credential: crendential, key: Utils.publicKey);
-      print(cre.credential);
+      print(creLogin.credential);
       RequestLogin requestLoginParameter = RequestLogin(
           requestId: "",
           requestTime:
               DateTime.now().toUtc().millisecondsSinceEpoch.toString());
-      LoginRequest request =
-          LoginRequest(data: cre, request: requestLoginParameter);
+      LoginRequest requestLog =
+          LoginRequest(data: creLogin, request: requestLoginParameter);
       final loginResponse =
-          await AuthenticationRes().loginWithEmailPassword(request);
+          await AuthenticationRes().loginWithEmailPassword(requestLog);
       return loginResponse;
+    } catch (error) {
+      print(error.toString());
+    }
+    return null;
+  }
+
+  Future<RegisterResponse> hanldeRegisterUser(
+      String username, String password) async {
+    try {
+      String crendential = await handleRenderEncrypter(username, password);
+
+      CrendentialRegister creRegister = CrendentialRegister(
+        credential: crendential,
+        key: Utils.publicKey,
+        email: "abc@gmail.com",
+        fullName: "Sao vay ta",
+        identityNumber: "0123456",
+        phone: "06546574987",
+      );
+
+      print(creRegister.credential);
+
+      RequestRegister requestRegisterParameter = RequestRegister(
+          requestId: "",
+          requestTime:
+              DateTime.now().toUtc().millisecondsSinceEpoch.toString());
+      RegisterRequest requestReg =
+          RegisterRequest(data: creRegister, request: requestRegisterParameter);
+      final registerResponse =
+          await AuthenticationRes().registerWithUserPassword(requestReg);
+      return registerResponse;
     } catch (error) {
       print(error.toString());
     }

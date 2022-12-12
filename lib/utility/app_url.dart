@@ -5,7 +5,7 @@ class AppUrl {
       'https://7ucpp7lkyl.execute-api.ap-southeast-1.amazonaws.com/dev';
 
   static const String login = '/login';
-  static const String register = '/registration';
+  static const String register = '/register';
   static const String forgotPassword = '/forgot_password';
 }
 
